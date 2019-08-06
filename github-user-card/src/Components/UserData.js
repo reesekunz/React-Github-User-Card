@@ -4,6 +4,7 @@
 // - After you fetch your data, set it to state
 
 import React from "react";
+import UserCard from "./UserCard";
 
 class UserData extends React.Component {
   constructor() {
@@ -14,7 +15,9 @@ class UserData extends React.Component {
       login: " ",
       id: " ",
       following: " ",
-      image: " "
+      image: " ",
+      publicrepo: " ",
+      githuburl: " "
     };
   }
 
@@ -30,7 +33,9 @@ class UserData extends React.Component {
           login: data.login,
           id: data.id,
           following: data.following,
-          image: data.avatar_url
+          image: data.avatar_url,
+          publicrepo: data.public_repos,
+          githuburl: data.url
         })
       )
 
@@ -49,12 +54,24 @@ class UserData extends React.Component {
     console.log("props", this.props);
     console.log("render invoked");
     return (
-      <div>
-        <h1>GitHub UserCard Data</h1>
-        Username: {this.state.login} Id: {this.state.id} Following:{" "}
-        {this.state.following}
-        <img src={this.state.image} alt="avatar image" />
-      </div>
+      // Originally did it this way instead of passing props to UserCard component
+      //   <div>
+      //     <h1>GitHub UserCard Data</h1>
+      //     <h3>{this.state.login}</h3>
+      //     <img src={this.state.image} alt="avatar image" />
+      //     Id: {this.state.id} Following: {this.state.following} Public repos:{" "}
+      //     {this.state.publicrepo}
+      //     GitHub url: {this.state.githuburl}
+      //   </div>
+
+      <UserCard
+        propslogin={this.state.login}
+        propsimage={this.state.image}
+        propsid={this.state.id}
+        propsfollowing={this.state.following}
+        propspublicrepo={this.state.publicrepo}
+        propsgithuburl={this.state.githuburl}
+      />
     );
   }
 }
