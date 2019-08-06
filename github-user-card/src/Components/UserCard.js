@@ -12,7 +12,7 @@ const UserCard = props => (
     <h1>GitHub UserCard Data</h1>
     <h3>{props.propslogin}</h3>
     <img src={props.propsimage} alt="avatar img" />
-    Id: {props.propsid} Following: {props.propsfollowing} Public repos:{" "}
+    Followers: {props.propsfollowers} Following: {props.propsfollowing} Public repos:{" "}
     {props.propspublicrepo}
     GitHub url: {props.propsgithuburl}
   </div>

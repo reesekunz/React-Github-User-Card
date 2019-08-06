@@ -23,7 +23,7 @@ class UserFollowers extends React.Component {
         return response.json();
         // this becomes the usergithub and is fed back into the next .then
       })
-      .then(data => this.setState({ data }))
+      .then(data => this.setState({data}))
 
       .catch(error => {
         console.log("error", error);
@@ -42,16 +42,15 @@ class UserFollowers extends React.Component {
     console.log("follower url = ", this.state.url);
 
     console.log("render invoked");
-    return this.state.followers.map(follower => {
+    return ( 
+        this.state.followers.map(follower => {
       return (
         <div>
           {follower.login}
           {follower.id}
           {follower.url}
         </div>
-      );
-    });
-  }
-}
+   
+      ) } ) ) } }
 
 export default UserFollowers;

@@ -13,7 +13,7 @@ class UserData extends React.Component {
     // super gives us acccess to 'this' keyword
     this.state = {
       login: " ",
-      id: " ",
+      followers: " ",
       following: " ",
       image: " ",
       publicrepo: " ",
@@ -33,7 +33,7 @@ class UserData extends React.Component {
         // data is from whatever is being called after .then(<here>)
         // login, id, etc. are taken from the github api object 
           login: data.login,
-          id: data.id,
+            followers: data.followers,
           following: data.following,
           image: data.avatar_url,
           publicrepo: data.public_repos,
@@ -56,7 +56,7 @@ class UserData extends React.Component {
     console.log("props", this.props);
     console.log("render invoked");
     return (
-      // Originally did it this way instead of passing props to UserCard component
+      // Originally did it this way instead of passing props to UserCard component, both work 
       //   <div>
       //     <h1>GitHub UserCard Data</h1>
       //     <h3>{this.state.login}</h3>
@@ -69,7 +69,7 @@ class UserData extends React.Component {
       <UserCard
         propslogin={this.state.login}
         propsimage={this.state.image}
-        propsid={this.state.id}
+        propsfollowers={this.state.followers}
         propsfollowing={this.state.following}
         propspublicrepo={this.state.publicrepo}
         propsgithuburl={this.state.githuburl}
