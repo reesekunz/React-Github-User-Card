@@ -30,6 +30,8 @@ class UserData extends React.Component {
       })
       .then(data =>
         this.setState({
+        // data is from whatever is being called after .then(<here>)
+        // login, id, etc. are taken from the github api object 
           login: data.login,
           id: data.id,
           following: data.following,

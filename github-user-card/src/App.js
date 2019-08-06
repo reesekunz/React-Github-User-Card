@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 
-import UserData from "./Components/UserData"
+import UserData from "./Components/UserData";
+import UserFollowers from "./Components/UserFollowers"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
    <UserData />
-      </header>
+   <UserFollowers />
     </div>
   );
 }
