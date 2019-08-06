@@ -44,11 +44,11 @@ class UserFollowers extends React.Component {
 
     return this.state.data.map(follower => {
       return (
-        <div key={follower.id}>
+        <div key={follower.id} className="bottomsection">
           {/* // returning each item in the array - follower - and the data you want from the api (login, url, etc.)) */}
-          <img src={follower.avatar_url} alt="followers avatar img" />
-          <h4> Username: </h4> {follower.login} 
-          <h4> GitHub URL: </h4> {follower.url} 
+          <img className="followersimg" src={follower.avatar_url} alt="followers avatar img" />
+          <h2> {follower.login} </h2> 
+          <h4> GitHub URL: {follower.url} </h4> 
 
         </div>
       );
