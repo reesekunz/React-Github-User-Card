@@ -11,9 +11,9 @@ class UserData extends React.Component {
     super();
     // super gives us acccess to 'this' keyword
     this.state = {
-      login: null,
-      id: null,
-      following: null
+      login: " ",
+      id: " ",
+      following: " "
     };
   }
 
@@ -44,8 +44,15 @@ class UserData extends React.Component {
   }
 
   render() {
+    console.log("props", this.props);
     console.log("render invoked");
-    return <div>{this.state.usergithub}</div>;
+    return (
+      <div>
+        <h1>GitHub UserCard Data</h1>
+        Username: {this.state.login} Id: {this.state.id} Following:{" "}
+        {this.state.following}
+      </div>
+    );
   }
 }
 
