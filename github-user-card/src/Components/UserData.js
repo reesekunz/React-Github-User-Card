@@ -13,7 +13,8 @@ class UserData extends React.Component {
     this.state = {
       login: " ",
       id: " ",
-      following: " "
+      following: " ",
+      image: " "
     };
   }
 
@@ -28,7 +29,8 @@ class UserData extends React.Component {
         this.setState({
           login: data.login,
           id: data.id,
-          following: data.following
+          following: data.following,
+          image: data.avatar_url
         })
       )
 
@@ -51,6 +53,7 @@ class UserData extends React.Component {
         <h1>GitHub UserCard Data</h1>
         Username: {this.state.login} Id: {this.state.id} Following:{" "}
         {this.state.following}
+        <img src={this.state.image} alt="avatar image" />
       </div>
     );
   }
