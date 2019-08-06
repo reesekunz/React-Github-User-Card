@@ -12,7 +12,7 @@ class UserFollowers extends React.Component {
     super();
     // super gives us acccess to 'this' keyword
     this.state = {
-      followers: []
+      data: []
     };
   }
 
@@ -37,13 +37,17 @@ class UserFollowers extends React.Component {
   }
 
   render() {
+
+    
+
+    console.log('userFollowers state = ', this.state)
     console.log("follower login = ", this.state.login);
     console.log("follower id = ", this.state.id);
     console.log("follower url = ", this.state.url);
 
     console.log("render invoked");
     return ( 
-        this.state.followers.map(follower => {
+        this.state.data.map(follower => {
       return (
         <div>
           {follower.login}
