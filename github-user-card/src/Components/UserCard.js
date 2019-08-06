@@ -6,15 +6,18 @@
 import React from "react";
 
 const UserCard = props => (
-  // Named them props.props<item> to differentiate when calling them in UserData.js 
+  // Named them props.props<item> to differentiate when calling them in UserData.js
   // (can name them props.whatever as long as its being called the same)
   <div>
-    <h1>GitHub UserCard Data</h1>
-    <h3>{props.propslogin}</h3>
+    <h1>Reese's GitHub UserCard</h1>
     <img src={props.propsimage} alt="avatar img" />
-    Followers: {props.propsfollowers} Following: {props.propsfollowing} Public repos:{" "}
-    {props.propspublicrepo}
-    GitHub url: {props.propsgithuburl}
+    <h2>Username: {props.propslogin}</h2>
+    <h4> GitHub URL: {props.propsgithuburl} </h4>
+    <h4>Repository Count: {props.propspublicrepo} </h4>
+    <h4>Followers: {props.propsfollowers}</h4>
+    <h4>Following: {props.propsfollowing}</h4>
+
+    <h1> Followers:</h1>
   </div>
 );
 

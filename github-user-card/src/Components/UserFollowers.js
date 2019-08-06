@@ -23,7 +23,7 @@ class UserFollowers extends React.Component {
         return response.json();
         // this becomes the usergithub and is fed back into the next .then
       })
-      .then(data => this.setState({data}))
+      .then(data => this.setState({ data }))
 
       .catch(error => {
         console.log("error", error);
@@ -37,24 +37,23 @@ class UserFollowers extends React.Component {
   }
 
   render() {
-
-    
-
-    console.log('userFollowers state = ', this.state)
-    console.log("follower login = ", this.state.login);
-    console.log("follower id = ", this.state.id);
-    console.log("follower url = ", this.state.url);
+    // Console.log this.state inside render to see what needs to be mapped over ('data' array in this case)
+    console.log("userFollowers state = ", this.state);
 
     console.log("render invoked");
-    return ( 
-        this.state.data.map(follower => {
+
+    return this.state.data.map(follower => {
       return (
-        <div>
-          {follower.login}
-          {follower.id}
-          {follower.url}
+        <div key={follower.id}>
+          {/* // returning each item in the array - follower - and the data you want from the api (login, url, etc.)) */}
+          <img src={follower.avatar_url} alt="followers avatar img" />
+          <h4> Username: </h4> {follower.login} 
+          <h4> GitHub URL: </h4> {follower.url} 
+
         </div>
-   
-      ) } ) ) } }
+      );
+    });
+  }
+}
 
 export default UserFollowers;
